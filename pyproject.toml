@@ -25,6 +25,19 @@ dev = [
     "ruff>=0.14.14",
 ]
 
+[tool.bandit]
+exclude_dirs = ["tests", "scripts"]
+skips = ["B101"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "standard"
+reportMissingTypeStubs = "warning"
+reportUnknownParameterType = "warning"
+reportUnknownArgumentType = "warning"
+reportUnknownMemberType = "warning"
+
 [tool.ruff]
 line-length = 100
 target-version = "py312"
@@ -36,12 +49,3 @@ ignore = []
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
-
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
-typeCheckingMode = "basic"
-
-[tool.bandit]
-exclude_dirs = ["tests", "scripts"]
-skips = ["B101"]
